@@ -143,7 +143,7 @@
     /*margin-top: 366px;*/
     margin-left: 426px;
     margin-right: 426px;
-    width: 514px;
+    width: 516px;
     height: 379px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
@@ -268,7 +268,7 @@
 }
 .post-modal-footer{
     margin-left: 250px;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
 }
 .post-modal-footer-save{
     background: #064EBC 0% 0% no-repeat padding-box !important;
@@ -338,6 +338,7 @@ border-bottom: none !important;
     font: normal normal normal 16px/21px Segoe UI;
     letter-spacing: 0px;
     opacity: 1;
+
 }
 .post-add-name{
     display: flex;
@@ -400,7 +401,7 @@ border-bottom: none !important;
     border-radius: 5px;
     opacity: 1;
 }
-.ant-modal-body{
+.post-modal .ant-modal-body{
  padding: 0px !important;
     margin-top: 40px;
     margin-left: 45px;
@@ -419,8 +420,9 @@ border-bottom: none !important;
     display: none;
 }
 .post-modal .ant-modal-content{
-    width: 520px;
-    height: 379px;
+    width: 514px;
+
+
 }
 /*Modal delete*/
 .modal-delete{
@@ -428,16 +430,22 @@ border-bottom: none !important;
     height: 306px;
 }
 .modal-delete .ant-modal-title{
-    text-align: left;
+
     font: normal normal bold 20px/27px Segoe UI;
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
+    text-align: center;
 }
 .modal-delete .ant-modal-header{
-    margin-left: 129px;
+    /*margin-left: 129px;*/
     border-bottom: none;
+    padding-bottom: 0px;
 
+}
+.modal-delete .ant-modal-body{
+    padding: 0px!important;
+    margin-top: 30px;
 }
 .modal-delete .ant-modal-body .modal-delete-icon{
     margin-left: 232px;
@@ -468,6 +476,7 @@ border-bottom: none !important;
 .modal-delete .modal-delete-footer{
     margin-left: 299px;
     padding-bottom: 25.5px;
+    display: inline-flex;
 }
 .modal-delete .modal-delete-btn-delete{
     margin-right: 20px;
@@ -478,6 +487,19 @@ border-bottom: none !important;
     border-radius: 10px;
     opacity: 1;
 
+}
+.modal-delete .modal-delete-btn-delete:hover{
+    background: #064EBC 0% 0% no-repeat padding-box;
+}
+.modal-delete .modal-delete-btn-delete:focus{
+    background: #064EBC 0% 0% no-repeat padding-box;
+}
+.modal-delete .modal-delete-btn-cancel:hover{
+    border-color: unset;
+}
+.modal-delete .modal-delete-btn-cancel:focus{
+    border-color: unset;
+    display: none;
 }
 .modal-delete .modal-delete-btn-delete span{
     text-align: left;
@@ -518,4 +540,131 @@ border-bottom: none !important;
 }
 .post-container ul li{
     padding-top: 28px;
+}
+.label-upload {
+    text-align: left;
+    font: normal normal normal 16px/21px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+/*Form upload image*/
+.form-upload-img {
+    max-width: 292px;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+/*post*/
+.post-container{
+    margin-top: 2px;
+    text-align: center;
+}
+.post{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 10px;
+    opacity: 1;
+    width: 370px;
+    height: 364px;
+
+}
+.post-top{
+    display: flex;
+    padding: 22px 15px 15px 30px;
+}
+.post-info{
+    margin-top: 1px;
+    width: 158px;
+    margin-left: 15px;
+
+
+}
+.post-info h3{
+    margin-bottom: 5px;
+    text-align: left;
+    font: normal normal 600 18px/24px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+.post-info p{
+    text-align: left;
+    font: normal normal normal 15px/20px Segoe UI;
+    letter-spacing: 0px;
+    color: #5B7083;
+    opacity: 1;
+    margin-bottom: 0px;
+}
+.post-option .icon-trash{
+    margin-left: 17px;
+}
+.post-option{
+    margin-left: 33px;
+}
+.post-avatar{
+    width: 50px;
+    height: 50px;
+
+}
+.post-avatar img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 28px;
+    opacity: 1;
+}
+.ant-avatar-image{
+    width: 50px;
+    height: 50px;
+}
+.post-mid{
+    width: 315px;
+    height: 60px;
+    margin-left: 31px;
+
+
+
+}
+.post-mid p{
+    text-align: left;
+    font: normal normal normal 15px/20px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    word-break: break-word;
+    max-height: 60px;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+
+    /*-webkit-line-clamp: 3;*/
+    /*white-space: nowrap;*/
+    /*width: 50px;*/
+    /*overflow: hidden;*/
+    text-overflow: ellipsis;
+}
+.post-bottom{
+    margin-top: 15px;
+    /*margin-left: 31px;*/
+}
+.page-detail-info-name-date h3{
+    text-align: left;
+    font: normal normal 600 18px/24px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+.page-detail-info-name-date p{
+    text-align: left;
+    font: normal normal normal 15px/20px Segoe UI;
+    letter-spacing: 0px;
+    color: #5B7083;
+    opacity: 1;
 }

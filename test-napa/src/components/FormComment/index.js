@@ -3,7 +3,7 @@ import './index.css'
 import {Button} from "antd";
 const FormComment = () => {
   return(
-      <>
+
           <div className="form-comment-container">
               <div className="form-comment-title">
                   <p>Post a new coment</p>
@@ -16,7 +16,6 @@ const FormComment = () => {
               </div>
 
           </div>
-      </>
   )
 }
 export default FormComment

@@ -11,13 +11,13 @@ import Notfound from "../Notfound";
 
 const Home = () => {
    return(
-       <>
+       <div className="home-container">
             <AppTitle/>
            <AppButton/>
            {/*<PageDetail/>*/}
            {/*<FormComment/>*/}
            {/*<Notfound/>*/}
-       </>
+       </div>
    )
 }
 export default Home

@@ -4,9 +4,9 @@ import {CREATE_POST,RETRIEVE_POST,UPDATE_POST,DELETE_POST
 
 import PostDataService from "../services/PostService";
 
-export const createPost = (title, description) => async (dispatch) => {
+export const createPost = (avatar,name, description, image) => async (dispatch) => {
     try {
-        const res = await PostDataService.create({ title, description });
+        const res = await PostDataService.create({ avatar,name, description, image });
 
         dispatch({
             type: CREATE_POST,

@@ -1,5 +1,7 @@
 .page-detail-container{
     margin-left: 100px;
+    margin-right: 100px;
+    width: 1166.5px;
 }
 .page-detail-title{
     margin-left: 507px;
@@ -88,7 +90,6 @@
     margin-right: 5px;
 }
 .tag-hr-detail{
-    width: 1166.5px;
     margin-bottom: 29.61px;
 }
 
@@ -119,7 +120,6 @@
     padding-inline-start: 0px
 }
 .tag-hr-detail-final{
-    width: 1166.5px;
     margin-top: 29.61px;
     margin-bottom: 30.39px;
 }

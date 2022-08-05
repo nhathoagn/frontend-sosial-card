@@ -5,16 +5,17 @@ const Tutorial = db.tutorials;
 exports.create = (req, res) => {
   console.log("da",req.body)
   // Validate request
-  if (!req.body.title) {
+  if (!req.body.name) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
 
   // Create a Tutorial
   const tutorial = new Tutorial({
-    title: req.body.title,
+    avatar: req.body.avatarr,
+    name: req.body.name,
     description: req.body.description,
-    image: req.body.image,
+    image: req.body.imagee,
 
     // published: req.body.published ? req.body.published : false
   });
@@ -35,8 +36,8 @@ exports.create = (req, res) => {
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+  const name = req.query.name;
+  var condition = name ? { name: { $regex: new RegExp(name), $options: "i" } } : {};
 
   Tutorial.find(condition)
     .then(data => {
@@ -52,6 +53,7 @@ exports.findAll = (req, res) => {
 
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
+  console.log("search", req.params)
   const id = req.params.id;
 
   Tutorial.findById(id)
@@ -74,7 +76,7 @@ exports.update = (req, res) => {
       message: "Data to update can not be empty!"
     });
   }
-
+  console.log("update", req.body)
   const id = req.params.id;
 
   Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
