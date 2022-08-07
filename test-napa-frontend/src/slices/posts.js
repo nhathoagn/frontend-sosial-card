@@ -108,11 +108,15 @@ const postsSlice = createSlice({
         },
         [deletePosts.fulfilled]: (state, action) => {
             let index = state.findIndex(({ id }) => id === action.payload.id);
+            console.log("index-delete", index)
             state.splice(index, 1);
         },
         [restorePosts.fulfilled]: (state, action) => {
-            let index = action.payload
-            state.push(index)
+            // let index = state.findIndex(({ id }) => id === action.payload.id);
+            // console.log("index-restore", index)
+            // let data = action.payload
+            // state.splice(index,0,data)
+            // state.push(index)
         },
         [disablePosts.fulfilled]: (state, action) => {
             let index = state.findIndex(({ id }) => id === action.payload.id);
@@ -122,14 +126,13 @@ const postsSlice = createSlice({
             };
         },
         [enablePosts.fulfilled]: (state,action) => {
-            let index = state.find(({num}) => num === action.payload.id )
-            // state[index] = {
-            //     ...state[index],
-            //     ...action.payload,
-            // };=
-            //
-            index = action.payload
-            console.log("wwwwwww",index)
+            let index = state.findIndex(({id}) => id === action.payload.id )
+            state[index] = {
+                ...state[index],
+                ...action.payload,
+            }
+
+
 
         },
         [findPostsByName.fulfilled]: (state, action) => {

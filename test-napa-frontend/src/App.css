@@ -5,3 +5,10 @@
 img{
   object-fit: cover;
 }
+/*validate*/
+.text-err {
+  color: red !important;
+}
+.err-input{
+  border: 1px solid red !important;
+}

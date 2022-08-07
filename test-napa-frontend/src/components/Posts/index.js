@@ -423,7 +423,7 @@ const AppButton = (props) => {
     const deletePort = () => {
         const idPost = currentTutorial.id
         setClick({...click,idPost})
-        dispatch(deletePosts({id: currentTutorial.id}))
+        dispatch(disablePosts({id: currentTutorial.id}))
         // dispatch(retrievePosts())
         refreshData()
         handleDeleteOk()
@@ -431,7 +431,7 @@ const AppButton = (props) => {
      }
     console.log("qqqqqqqqqqqqqqqq", click)
     const Revert  =  () => {
-            dispatch(restorePosts({id: click.idPost}))
+            dispatch(enablePosts({id: click.idPost}))
         console.log("1")
             setClick('')
         console.log("2")
@@ -460,8 +460,8 @@ const AppButton = (props) => {
 
 
 
-   // const result = post.filter(value => value.avatar  )
-   //  console.log("mdmdmdmd",result)
+   const result = post.filter(value => value.deleteCheck == false  )
+    console.log("mdmdmdmd",result)
 
     return (
         <>
@@ -558,7 +558,7 @@ const AppButton = (props) => {
             <div className="post-container">
                 <ul style={{marginLeft: 100}}>
 
-                    { post ? (<>{post  && post.map((value, index) => (
+                    { result ? (<>{result  && result.map((value, index) => (
 
                             <li style={{display: "inline-block", marginRight: 28, width: 370}} key={index}
                                 onClick={() => setActivePost(value, index)}>

@@ -3,8 +3,7 @@ import './index.css'
 import {Button} from "antd";
 import {useDispatch} from "react-redux";
 import {commentsPosts, retrievePosts} from "../../slices/posts";
-import Detail from "../Detail";
-import PageDetail from "../Detail";
+
 const FormComment = (props) => {
     const [commentContext, setCommentcontext] = useState();
     const dispatch = useDispatch();
@@ -15,20 +14,27 @@ const FormComment = (props) => {
     console.log("comments", commentContext)
     console.log("id",props.data.id)
     console.log("props",props.reset)
+    const [validateComment, setValidateComment] = useState(false)
     const Comment = () => {
      let data = {
          comments: commentContext
      }
         console.log("data", commentContext)
-     dispatch(commentsPosts({id: props.data.id ,data}))
-         .then( response =>{
-           // props.reset.(response.payload)
-             props.reset(response.payload)
-         })
-         .catch(e => {
-             console.log(e)
-         })
-        setCommentcontext("")
+        if (!validateComment){
+            setValidateComment(true)
+        }else{
+            setValidateComment(false)
+            dispatch(commentsPosts({id: props.data.id ,data}))
+                .then( response =>{
+                    // props.reset.(response.payload)
+                    props.reset(response.payload)
+                })
+                .catch(e => {
+                    console.log(e)
+                })
+            setCommentcontext("")
+        }
+
     }
   return(
 
@@ -37,7 +43,7 @@ const FormComment = (props) => {
                   <p>Post a new coment</p>
               </div>
               <div className="form-comment-title-input">
-                  <textarea value={commentContext} className="form-comment-title-input-placeholder" onChange={handelComment} placeholder="Add comment...">
+                  <textarea value={commentContext} className={validateComment ? "err-input" +  " form-comment-title-input-placeholder" : "form-comment-title-input-placeholder" } onChange={handelComment} placeholder="Add comment...">
 
                   </textarea>
                   <div className="form-comment-btn">
